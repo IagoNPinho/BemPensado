@@ -56,6 +56,27 @@
     });
   }
 
+  // MENU Mobile
+  function initMenuMobile() {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    if (!hamburger || !navLinks) return;
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("open");
+    });
+
+    // Fecha o menu ao clicar em um link
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("open");
+      });
+    });
+  }
+
   // FAB behavior
   function initFAB() {
     const fab = $("#fab");
@@ -207,11 +228,10 @@
       gsap.to(".hero-inner", {
         y: -30,
         ease: "none",
-        scrollTrigger: { 
-          trigger: ".hero", 
-          start: "top top", 
-          scrub: true, 
-          markers: true 
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          scrub: true,
         },
       });
 
@@ -225,10 +245,9 @@
             opacity: 1,
             duration: 0.5,
             delay: i * 0.06,
-            scrollTrigger: { 
-              trigger: el, 
+            scrollTrigger: {
+              trigger: el,
               start: "top 90%",
-              markers: true,
             },
           }
         );
@@ -253,6 +272,7 @@
 
   // Init all
   document.addEventListener("DOMContentLoaded", () => {
+    initMenuMobile();
     initNavbar();
     initSmoothLinks();
     initFAB();
