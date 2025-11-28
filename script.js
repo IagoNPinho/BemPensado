@@ -243,11 +243,11 @@
           {
             y: 0,
             opacity: 1,
-            duration: 0.5,
-            delay: i * 0.06,
+            duration: 0.2,
+            delay: i * 0.02,
             scrollTrigger: {
               trigger: el,
-              start: "top 90%",
+              start: "-20% 95%",
             },
           }
         );
