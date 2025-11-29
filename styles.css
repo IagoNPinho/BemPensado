@@ -138,8 +138,10 @@ body {
 
 /* HERO */
 .hero {
-  background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c");
+  background-image: url("./assets/image/backgroun-hero.webp");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: center;
   position: relative;
   min-height: 100vh;
@@ -306,7 +308,7 @@ h2 {
 }
 
 .about-section {
-  background-image: url("./assets/image/banner-background.jpg");
+  background-image: url("./assets/image/banner-background.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -378,7 +380,7 @@ h2 {
 
 /* WHY BP */
 .why-bp {
-  background-image: url("./assets/image/background-2.png");
+  background-image: url("./assets/image/background-2.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -393,7 +395,7 @@ h2 {
 
 /* PORTFOLIO */
 .portfolio {
-  background-image: url(./assets/image/background-3.jpg);
+  background-image: url("./assets/image/background-3.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -482,7 +484,7 @@ h2 {
 
 /*  Orçamento Section */
 .orcamento {
-  background-image: url("./assets/image/backgroun-4.jpg");
+  background-image: url("./assets/image/backgroun-4.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -671,7 +673,7 @@ footer {
     width: 70%;
 
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url("./assets/image/background-2.png");
+      url("./assets/image/background-2.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
