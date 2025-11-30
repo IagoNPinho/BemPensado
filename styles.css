@@ -627,10 +627,6 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .logo img {
-    height: 52px;
-  }
-
   .cards {
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
