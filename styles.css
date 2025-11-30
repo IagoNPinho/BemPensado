@@ -269,6 +269,18 @@ h2 {
   margin-bottom: 18px;
 }
 
+/* Background */
+.about-section,
+.why-bp,
+.portfolio,
+.orcamento{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--graphite);
+}
+
 /* CARDS */
 .cards {
   display: grid;
@@ -308,11 +320,6 @@ h2 {
 }
 
 .about-section {
-  background-image: url("./assets/image/banner-background.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   min-height: 100vh;
   color: #fff;
   display: flex;
@@ -380,12 +387,6 @@ h2 {
 
 /* WHY BP */
 .why-bp {
-  background-image: url("./assets/image/background-2.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
   min-height: 75vh;
   align-items: center;
   margin: 0 auto;
@@ -395,11 +396,6 @@ h2 {
 
 /* PORTFOLIO */
 .portfolio {
-  background-image: url("./assets/image/background-3.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   min-height: 80vh;
 }
 
@@ -480,15 +476,6 @@ h2 {
   height: 220px;
   object-fit: cover;
   border-radius: 8px;
-}
-
-/*  Orçamento Section */
-.orcamento {
-  background-image: url("./assets/image/backgroun-4.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 /* FORM */
@@ -672,12 +659,7 @@ footer {
     height: auto;
     width: 70%;
 
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url("./assets/image/background-2.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
 
     flex-direction: column;
     justify-content: center;

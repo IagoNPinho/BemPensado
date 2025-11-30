@@ -96,6 +96,37 @@
     });
   }
 
+  // Init Lazy Background
+  function initLazyBackgrounds() {
+    const lazyBackgrounds = document.querySelectorAll("[data-bg-image]");
+
+    if (lazyBackgrounds.length === 0) return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px 0px 100px 0px",
+      threshold: 0.001,
+    };
+
+    const backgroundObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const element = entry.target;
+          const imageUrl = element.getAttribute("data-bg-image");
+
+          element.style.backgroundImage = `url('${imageUrl}')`;
+
+          element.removeAttribute("data-bg-image");
+          observer.unobserve(element);
+        }
+      });
+    }, observerOptions);
+
+    lazyBackgrounds.forEach((bg) => {
+      backgroundObserver.observe(bg);
+    });
+  }
+
   // Portfolio gallery modal
   function initGallery() {
     const galleries = {
@@ -276,6 +307,7 @@
     initNavbar();
     initSmoothLinks();
     initFAB();
+    initLazyBackgrounds();  
     initGallery();
     initForm();
     initFadeObserver();
