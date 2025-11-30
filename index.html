@@ -127,8 +127,7 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: var(--offwhite);
-      color: var(--graphite);
+      background: var(--graphite);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       line-height: 1.5
@@ -147,7 +146,7 @@
       backdrop-filter: blur(8px);
       background: rgba(255, 255, 255, .75);
       border-bottom: 1px solid rgba(0, 0, 0, .06);
-      transition: background .28s ease, box-shadow .28s ease
+      transition: background .6s ease, box-shadow .6s ease
     }
 
     .navbar.scrolled {
@@ -714,7 +713,7 @@
 
     @media (max-width:768px) {
       section {
-        padding: 8vh 5vw
+        padding: 80px 20px
       }
 
       .nav-links {
@@ -752,10 +751,6 @@
         display: flex
       }
 
-      .hero {
-        padding: 72px 20px
-      }
-
       .cta-buttons {
         flex-direction: column;
         width: 100%
@@ -766,10 +761,6 @@
         width: 100%;
         text-align: center;
         margin: 6px 0
-      }
-
-      .about-section {
-        padding: 40px 20px
       }
 
       .gallery-grid img {
@@ -804,7 +795,12 @@
       }
     }
 
-    @media (max-width:480px) {
+    @media (max-width:500px) {
+      section,
+      .hero {
+        padding: 80px 20px
+      }
+
       h1 {
         font-size: 26px !important
       }
