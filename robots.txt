@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://bempensadomoveis-exemplo.com/sitemap.xml
+Sitemap: https://bempensado.vercel.app/sitemap.xml
