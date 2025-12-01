@@ -98,7 +98,11 @@
 
   // Init Lazy Background
   function initLazyBackgrounds() {
-    const lazyBackgrounds = document.querySelectorAll("[data-bg-image]");
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+    const imageUrlAttribute = isMobile ? "data-bg-mobile" : "data-bg-desktop";
+
+    const lazyBackgrounds = document.querySelectorAll(`[data-bg-mobile], [data-bg-desktop]`);
 
     if (lazyBackgrounds.length === 0) return;
 
@@ -112,19 +116,21 @@
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const element = entry.target;
-          const imageUrl = element.getAttribute("data-bg-image");
 
-          element.style.backgroundImage = `url('${imageUrl}')`;
+          const imageUrl = element.getAttribute(imageUrlAttribute);
 
-          element.removeAttribute("data-bg-image");
+          if (imageUrl) {
+            element.style.backgroundImage = `url('${imageUrl}')`;
+          }
+
+          element.removeAttribute("data-bg-mobile");
+          element.removeAttribute("data-bg-desktop");
           observer.unobserve(element);
         }
       });
     }, observerOptions);
 
-    lazyBackgrounds.forEach((bg) => {
-      backgroundObserver.observe(bg);
-    });
+    lazyBackgrounds.forEach(element => backgroundObserver.observe(element));
   }
 
   // Portfolio gallery modal
@@ -307,7 +313,7 @@
     initNavbar();
     initSmoothLinks();
     initFAB();
-    initLazyBackgrounds();  
+    initLazyBackgrounds();
     initGallery();
     initForm();
     initFadeObserver();
