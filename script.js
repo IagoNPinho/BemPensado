@@ -108,7 +108,7 @@
 
     const observerOptions = {
       root: null,
-      rootMargin: "0px 0px 200px 0px",
+      rootMargin: "0px 0px 400px 0px",
       threshold: 0.001,
     };
 
@@ -118,13 +118,15 @@
           const element = entry.target;
 
           const imageUrl = element.getAttribute(imageUrlAttribute);
+          console.log(imageUrl);
 
           if (imageUrl) {
             element.style.backgroundImage = `url('${imageUrl}')`;
           }
 
-          element.removeAttribute("data-bg-mobile");
           element.removeAttribute("data-bg-desktop");
+          element.removeAttribute("data-bg-mobile");
+
           observer.unobserve(element);
         }
       });
